@@ -12,12 +12,12 @@ Source3: pgadmin4.tmpfiles.d
 Source4: pgadmin4.desktop.in
 Source6: pgadmin4.qt.conf.in
 
+BuildArch: noarch
+
 BuildRequires: systemd
 %{?systemd_requires}
 
 BuildRequires: python3-sphinx
-BuildRequires: gcc-c++
-
 BuildRequires: python3-passlib python3-flask-mail python3-flask-migrate
 BuildRequires: python3-dateutil python3-flask-gravatar
 BuildRequires: python3-simplejson python3-flask-babel python3-flask-babelex
@@ -27,7 +27,6 @@ BuildRequires: python3-flask-wtf python3-flask python3-fixtures
 BuildRequires: python3-itsdangerous python3-blinker python3-flask-sqlalchemy
 BuildRequires: python3-dateutil python3-flask-paranoid
 BuildRequires: python3-devel python3-extras
-Requires: qt
 
 %description
 pgAdmin 4 is a rewrite of the popular pgAdmin3 management tool for the
@@ -47,7 +46,6 @@ application.
 
 Summary: pgAdmin4 web application
 Requires: %{name}-docs
-BuildArch: noarch
 Requires: python3-babel python3-flask python3-flask-babelex
 Requires: python3-flask-htmlmin
 Requires: python3-flask-sqlalchemy
@@ -81,6 +79,7 @@ Requires: python3-extras
 
 %package desktop
 Summary:  pgAdmin4 desktop application
+BuildRequires: gcc-c++
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-qtwebkit-devel qt5-qtwebengine-devel
 Requires: qt
@@ -88,7 +87,6 @@ Requires: qt5-qtwebengine
 
 %description desktop
 This package contains the required files to run pgAdmin4 as a desktop application
-
 
 %package docs
 Summary:  pgAdmin4 documentation

@@ -12,8 +12,6 @@ Source3: pgadmin4.tmpfiles.d
 Source4: pgadmin4.desktop.in
 Source6: pgadmin4.qt.conf.in
 
-BuildArch: noarch
-
 BuildRequires: systemd
 %{?systemd_requires}
 
@@ -71,10 +69,10 @@ Requires: pytz python3-click
 Requires: python3-fixtures
 Requires: python3-pyrsistent python3-flask-migrate
 Requires: python3-mimeparse python3-speaklater
-Requires: python3-mod_wsgipython3-unittest2
+Requires: python3-unittest2
 Requires: httpd
 Requires: python3
-Requires: mod_wsgi
+Requires: python3-mod_wsgi
 Requires: python3-extras
 
 %package desktop
